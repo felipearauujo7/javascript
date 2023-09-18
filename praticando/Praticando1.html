@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Praticando ManipulçaoDOM</title>
+    <style>
+        body {
+            background: black;
+        }
+        h1 {
+            font: normal 20pt arial;
+            color: white;
+            margin-top: 200px;
+            text-align: center;
+        }
+        #area {
+            background: red;
+            font: 20pt arial;
+            color: black;
+            width: 200px;
+            height: 200px;
+            line-height: 200px;
+            text-align: center;
+            border-radius: 80px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            cursor: pointer;
+        }
+        p {
+            color: greenyellow;
+            position: absolute;
+            top: 80%;
+            left: 88%;
+            
+        }
+        #botao-sair {
+                background-color: rgb(189, 240, 229);
+                border: none;
+                border-radius: 5px;
+                position: absolute;
+                top: 65%;
+                left: 46%;
+                height: 30px;
+                width: 100px;
+                cursor: pointer;
+                
+
+        }
+    </style>
+</head>
+<body>
+    <input type="button" id="botao-sair" value="sair">
+
+    <div id="area">
+         <strong>INTERAJA</strong>
+    </div>
+    
+    <h1>CRIANDO UM EVENTO DOM</h1>
+
+    <p>By: Felipe Araujo</p>
+
+    <script>
+        var a = window.document.getElementById('area')
+        a.addEventListener('click', clicar)
+        a.addEventListener('mouseenter', entrar)
+        a.addEventListener('mouseout', sair)
+
+        var botaoLogar = window.document.getElementById('botao-sair')
+        botaoLogar.addEventListener('click', click)
+
+        function clicar() {
+            a.innerText = 'Clicou'
+            a.style.background = 'blue'
+        }
+        function entrar() {
+            a.innerText = 'Entrou'
+            a.style.background = 'green'
+        }
+        function sair() {
+            a.innerText = 'Saiu'
+            a.style.background = 'red'
+        }
+        function click() {
+            window.alert('OBRIGADO POR TESTAR MEU PROJETO!')
+        }
+    </script>
+
+</body>
+</html>
